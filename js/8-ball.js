@@ -4,7 +4,7 @@ let question = document.getElementById("user_question");
 
 let answersArray = [];
 for (let i = 1; i <= 20; i++){
-    let source = `./img/magic8ball_${i}.png`;
+    let source = `../img/magic8ball_${i}.png`;
     answersArray.push(source);
 }
 
@@ -16,7 +16,6 @@ function random(min, max){
     return randomNumber;
 }
 
-console.log(random(1, 20));
 
 function addElements () {
     let sphere = document.createElement("div");
@@ -30,3 +29,8 @@ function addElements () {
 }
 
 addElements();
+
+function changeElements(){
+    random(1, 20); 
+    
+}

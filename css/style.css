@@ -6,7 +6,7 @@ img, a
 
 body {
     height: 100vh;
-    background-color: gray;
+    background-color: slategray;
     display: flex;
     justify-content: center;
     align-items: center;
