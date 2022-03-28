@@ -31,6 +31,12 @@ function addElements () {
 addElements();
 
 function changeElements(){
-    random(1, 20); 
-    
+    submit.addEventListener('click', e => {
+        e.preventDefault();
+        let num = random(1,20)
+        let magic_ball = document.getElementById('magic-8-ball');
+        magic_ball.style.backgroundImage = `url(${answersArray[num]})`;
+    })
 }
+
+changeElements();
