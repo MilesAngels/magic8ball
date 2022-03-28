@@ -23,6 +23,7 @@ body {
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    filter: drop-shadow(0px 400px 80px rgba(77, 78, 83, 0.5));
 }
 
 
@@ -48,7 +49,7 @@ input[type=text]{
     border: none;
     border-width: 0;
     outline: none;
-    padding: 15px;
+    padding: 10px;
     margin: 20px 0;
     font-size: 1.15rem;
     text-align: center;
