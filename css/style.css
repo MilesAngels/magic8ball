@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-sphere {
+    display: block;
+    background: black;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    margin: 0;
+    background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+}
+
+.question {
+    display: block;
+    margin: 20px;
+    align-content: center;
+}
+
+input[type=text]{
+    width: 100%;
+    height: 2rem;
+    border-radius: 20px;
+    border: none;
+    border-width: 0;
+    outline: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+input[type=button]{
+    margin: auto;
+    width: 50%;
+}
