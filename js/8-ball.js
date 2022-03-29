@@ -30,7 +30,11 @@ function addElements () {
 
 addElements();
 
-function changeElements(){
+function checkInput(){
+    const regex = /\?$/;
+}
+
+function changeImage(){
     submit.addEventListener('click', e => {
         e.preventDefault();
         let num = random(1,20)
@@ -39,4 +43,4 @@ function changeElements(){
     })
 }
 
-changeElements();
+changeImage();
