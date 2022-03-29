@@ -38,6 +38,12 @@ function addElements () {
 }
 
 /******* Validate Input *******/
+// accepts a string parameter
+// checks if the user's input is not an empty string
+// if the user's input is an empty string, then an error message is displayed
+// if the user's input in not an empty string, then it checks if the string has a question mark
+// if the user's input has a question mark, then the statement will return true
+// else it will output an error message
 function checkInput(string){
     const regex = /\?$/;
     if (string !== ""){
@@ -47,11 +53,16 @@ function checkInput(string){
         }
         else {
             //console.log("sorry I cannot understand");
+            let error = document.createElement('p');
+            let errorMessage = document.createTextNode("I am sorry, I do not understand.");
+            error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
+            document.body.appendChild(error);
+            error.appendChild(errorMessage);
             return false;
         }
     }
     else {
-        console.log('Sorry');
+        //console.log('Sorry');
         let error = document.createElement('p');
         let errorMessage = document.createTextNode("I am sorry, I do not understand.");
         error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
@@ -60,6 +71,11 @@ function checkInput(string){
     }
 }
 
+/******* Change image function *******/
+// once the ask question button is pressed, the function checks:
+// if the user input is valid
+// if it is valid, then it will call the random() function to generate a number and change the image based on the number generated
+// it will then use that number to create a source path using the answerArray that was generated earlier
 function changeImage(){
     submit.addEventListener('click', e => {
         e.preventDefault();
@@ -73,5 +89,8 @@ function changeImage(){
     })
 }
 
+// call this fuction to start everything up
 addElements();
+
+// call this function to generate the appropriate images
 changeImage();
