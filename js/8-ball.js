@@ -54,10 +54,13 @@ function checkInput(string){
         else {
             //console.log("sorry I cannot understand");
             let error = document.createElement('p');
+            error.setAttribute("id", "error")
             let errorMessage = document.createTextNode("I am sorry, I do not understand.");
-            error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
             document.body.appendChild(error);
             error.appendChild(errorMessage);
+            setTimeout(function() {
+                document.getElementById("error").style.display = 'none';
+            }, 3000); 
             return false;
         }
     }
@@ -68,7 +71,19 @@ function checkInput(string){
         error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
         document.body.appendChild(error);
         error.appendChild(errorMessage);
+        
     }
+    
+}
+
+function changeURL() {
+    let num = random(1,20)
+    let magic_ball = document.getElementById('magic-8-ball');
+    setTimeout(() => {
+        magic_ball.style.backgroundImage = `url(${answersArray[num]})`;
+        magic_ball.style.animation = "fadeIntoScreen 5s ease 1";
+    }, 3000);
+     
 }
 
 /******* Change image function *******/
@@ -80,13 +95,12 @@ function changeImage(){
     submit.addEventListener('click', e => {
         e.preventDefault();
         if (checkInput(question.value)){
-            let num = random(1,20)
-            let magic_ball = document.getElementById('magic-8-ball');
-            magic_ball.style.backgroundImage = `url(${answersArray[num]})`;
-            console.log("yay!");
+            setTimeout(() => {
+                changeURL();
+            }, 3000);
         }
-        
-    })
+    });
+    form.reset();
 }
 
 // call this fuction to start everything up
