@@ -76,6 +76,7 @@ function checkInput(string){
     
 }
 
+/******* Change Image Source Function *******/
 function changeURL() {
     let num = random(1,20)
     let magic_ball = document.getElementById('magic-8-ball');
