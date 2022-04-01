@@ -71,7 +71,7 @@ function checkInput(string){
         //console.log('Sorry');
         let error = document.createElement('p');
         let errorMessage = document.createTextNode("I am sorry, I do not understand.");
-        error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
+        error.style.cssText = 'position:absolute;top:50px;width:400px;height:3rem;line-height:3rem;text-align:center;font-size:1.5rem;background-color:#fff;color:red;';
         document.body.appendChild(error);
         error.appendChild(errorMessage);
         setTimeout(() => {
@@ -108,8 +108,8 @@ function changeImage(){
         setTimeout(() => {
             document.getElementById("form").reset();
             let magic_8 = document.getElementById("magic-8-ball");
-            magic_8.style.backgroundImage = "url('../img/magic8ball_start.png')";
-            magic_8.style.animation = "fadeIntoScreen 5s ease 2";
+            magic_8.style.backgroundImage = `url('../img/magic8ball_start.png')`;
+            //magic_8.style.animation = "fadeIntoScreen 5s ease 2";
             
         }, 10000);
     });   
