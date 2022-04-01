@@ -6,7 +6,7 @@ let question = document.getElementById("user_question");
 //declares an array and create an array of source paths for the images
 let answersArray = [];
 for (let i = 1; i <= 20; i++){
-    let source = `../img/magic8ball_${i}.png`;
+    let source = `./img/magic8ball_${i}.png`;
     answersArray.push(source);
 }
 
