@@ -12,6 +12,10 @@ body {
     align-items: center;
 }
 
+.background-image {
+    background: url("../img/pexels-pixabay-2150.jpg") no-repeat;
+    background-size: cover;
+}
 
 .outer-sphere {
     display: flex;
@@ -23,10 +27,26 @@ body {
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-    filter: drop-shadow(0px 400px 80px rgba(77, 78, 83, 0.5));
+    filter: drop-shadow(0px 400px 80px rgba(0, 0, 0, 0.7));
 }
 
-
+#inner-circle {
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    /*
+     Put top edge and left edge in the center
+    */
+    top: 41%;
+    left: 41%;
+    margin: -150px 0px 0px -150px;
+    /* 
+     Offset the position correctly with
+     minus half of the width and minus half of the height 
+    */
+  }
 
 #magic-8-ball{
     background-size: contain;
@@ -79,10 +99,15 @@ input[type=button]{
 
 @keyframes fadeIntoScreen {
     0% { opacity: 0; }
+    10% { opacity: 0.1; }
     20% { opacity: 0.2; }
+    30% { opacity: 0.3; }
     40% { opacity: 0.4; }
+    50% { opacity: 0.5; }
     60% { opacity: 0.6; }
+    70% { opacity: 0.7; }
     80% { opacity: 0.8; }
+    90% { opacity: 0.9; }
     100% { opacity: 1; }
 }
 

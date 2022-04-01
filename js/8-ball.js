@@ -28,11 +28,14 @@ function random(min, max){
 // sets the background image of the newImage dive to the starting image of the magic 8-ball
 function addElements () {
     let sphere = document.createElement("div");
+    let inner_sphere = document.createElement("div");
     let newImage = document.createElement("div");
     let form = document.getElementById("form");
     form.appendChild(sphere);
     sphere.setAttribute("class", "outer-sphere");
-    sphere.appendChild(newImage);
+    inner_sphere.setAttribute("id", "inner-circle");
+    sphere.appendChild(inner_sphere);
+    inner_sphere.appendChild(newImage);
     newImage.setAttribute("id", "magic-8-ball")
     newImage.style.backgroundImage = "url('../img/magic8ball_start.png')";
 }
@@ -60,7 +63,7 @@ function checkInput(string){
             error.appendChild(errorMessage);
             setTimeout(function() {
                 document.getElementById("error").style.display = 'none';
-            }, 3000); 
+            }, 5000); 
             return false;
         }
     }
@@ -71,7 +74,9 @@ function checkInput(string){
         error.style.cssText = 'position:absolute;top:80px;width:300px;height:2rem;line-height:1.75rem;text-align:center;font-size:1.25rem;background-color:#373737;color:red;';
         document.body.appendChild(error);
         error.appendChild(errorMessage);
-        
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 5000);
     }
     
 }
@@ -96,12 +101,18 @@ function changeImage(){
     submit.addEventListener('click', e => {
         e.preventDefault();
         if (checkInput(question.value)){
-            setTimeout(() => {
-                changeURL();
-            }, 3000);
+        
+            changeURL();
+            
         }
-    });
-    form.reset();
+        setTimeout(() => {
+            document.getElementById("form").reset();
+            let magic_8 = document.getElementById("magic-8-ball");
+            magic_8.style.backgroundImage = "url('../img/magic8ball_start.png')";
+            magic_8.style.animation = "fadeIntoScreen 5s ease 2";
+            
+        }, 10000);
+    });   
 }
 
 // call this fuction to start everything up
@@ -109,3 +120,4 @@ addElements();
 
 // call this function to generate the appropriate images
 changeImage();
+
