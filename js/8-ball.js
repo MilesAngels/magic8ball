@@ -37,7 +37,7 @@ function addElements () {
     sphere.appendChild(inner_sphere);
     inner_sphere.appendChild(newImage);
     newImage.setAttribute("id", "magic-8-ball")
-    newImage.style.backgroundImage = `url("../img/magic8ball_start.png")`;
+    newImage.style.backgroundImage = `url("img/magic8ball_start.png")`;
 }
 
 /******* Validate Input *******/
